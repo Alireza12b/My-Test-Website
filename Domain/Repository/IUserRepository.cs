@@ -9,5 +9,7 @@ namespace Domain.Repository
     public interface IUserRepository
     {
         public bool IsExists(Predicate<User> predicate);
+        public void Register(User user);
+        public bool Login(string email, string password);
     }
 }

@@ -11,19 +11,24 @@ namespace infrastructure.Repository
 {
     public class UserRepository : IUserRepository
     {
+        private DataBase _database;
+        public UserRepository(DataBase dataBase)
+        {
+            _database = dataBase;
+        }
         public bool IsExists(Predicate<User> predicate)
         {
-            return DataBase.Users.Exists(predicate);
+            return _database.Users.Any(u => predicate(u));
         }
 
         public void Register (User user)
         {
-            DataBase.Users.Add(user);
+            _database.Users.Add(user);
         }
 
         public bool Login(string email, string password)
         {
-            var validUser = DataBase.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
+            var validUser = _database.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
 
             if (validUser != null)
                 return true;

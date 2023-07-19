@@ -34,9 +34,9 @@ namespace Application.Services
             _userRepository.Register(user);
         }
 
-        public bool Login(string Email, string Password)
+        public bool Login(string email, string password)
         {
-            var isValidUser = _userRepository.Login(Email, Password);
+            var isValidUser = _userRepository.Login(email, password);
 
             if (isValidUser)
                 return true;

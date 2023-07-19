@@ -10,6 +10,6 @@ namespace Application.Interfaces
     public interface IUserServices
     {
         public void Register(UserRegisterDTO userRegisterDTO);
-        public bool Login(string Email, string Password);
+        public bool Login(string email, string password);
     }
 }

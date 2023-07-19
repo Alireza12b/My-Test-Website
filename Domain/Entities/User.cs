@@ -3,7 +3,7 @@ using Domain.Repository;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class User
     {
@@ -18,6 +18,7 @@ namespace Domain
             SetUsername(username);
             SetEmail(email);
             SetPassword(password);
+            RegisterDate = DateTime.Now;
         }
 
         public Guid UniqueID { get; set; }
@@ -26,6 +27,7 @@ namespace Domain
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public DateTime RegisterDate { get; set; }
 
         private void SetName(string firstname, string familyname)
         {

@@ -1,6 +1,9 @@
 ﻿using Domain.Exception;
 using Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
 namespace Domain.Entities
@@ -21,6 +24,12 @@ namespace Domain.Entities
             RegisterDate = DateTime.Now;
         }
 
+        public User()
+        {
+            
+        }
+
+        [Key]
         public Guid UniqueID { get; set; }
         public string Firstname { get; set; }
         public string Familyname { get; set; }

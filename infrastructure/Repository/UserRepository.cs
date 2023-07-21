@@ -11,8 +11,8 @@ namespace infrastructure.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private DataBase _database;
-        public UserRepository(DataBase dataBase)
+        private WebsiteDbContext _database;
+        public UserRepository(WebsiteDbContext dataBase)
         {
             _database = dataBase;
         }

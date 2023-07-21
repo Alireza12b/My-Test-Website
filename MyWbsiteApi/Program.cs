@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Persistance;
 using persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,8 +15,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options
     .UseSqlServer(@"Data Source=ALIREZA;Initial Catalog=MyWebsite;Integrated Security=True;TrustServerCertificate=True"));
 
+builder.Services.AddDbContext<WebsiteDbContext>(options => options
+    .UseSqlServer(@"Data Source=ALIREZA;Initial Catalog=MyWebsite;Integrated Security=True;TrustServerCertificate=True"));
+
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
 
 var app = builder.Build();

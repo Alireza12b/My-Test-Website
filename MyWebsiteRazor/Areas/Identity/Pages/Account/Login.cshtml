@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Log in";
+    Layout = "_IdentityLayout";
 }
 
 <div class="app-content content">
@@ -60,7 +61,7 @@
                                                 <button type="submit" class="btn btn-primary glow w-100 position-relative">ورود<i id="icon-arrow" class="bx bx-left-arrow-alt"></i></button>
                                             </form>
                                             <hr>
-                                            <div class="text-center"><small class="mr-25">حسابی ندارید؟</small><a asp-area="Identity" asp-page="/Account/Login"><small>ثبت نام</small></a></div>
+                                            <div class="text-center"><small class="mr-25">حسابی ندارید؟</small><a asp-area="Identity" asp-page="/Account/Register"><small>ثبت نام</small></a></div>
                                         </div>
                                     </div>
                                 </div>

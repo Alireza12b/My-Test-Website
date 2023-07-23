@@ -11,6 +11,7 @@ builder.Services.AddDbContext<MyWebsiteRazorContext>(options =>
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<MyWebsiteRazorContext>();
 
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
@@ -28,7 +29,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 app.UseAuthorization();
 

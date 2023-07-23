@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyWebsiteRazor.Areas.Identity.Data;
@@ -16,8 +17,13 @@ namespace MyWebsiteRazor.Pages
             _logger = logger;
         }
 
+        [Authorize]
         public IActionResult OnGet()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+
+            }
             if (!_signinManager.IsSignedIn(User))
             {
                 return LocalRedirect("/Identity/Account/Login");
